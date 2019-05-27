@@ -1,0 +1,21 @@
+path_classifiers:
+  test:
+    - "*Test.java"
+queries:
+  - exclude: "*"
+  - exclude: java/equals-on-unrelated-types
+  - include: java/command-line-injection
+  - include:
+      tags:
+        - "security"
+        - "correctness"
+  - include:
+      severity: "error"
+extraction:
+  java:
+    index:    # Customizable step used by all languages.
+      maven:
+        version: 3.6.0
+      java_version: 11
+      build_command:
+        - mvn clean install

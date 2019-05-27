@@ -1,0 +1,6 @@
+CREATE DATABASE satchel_test;
+-- change this, obviously.
+CREATE USER satchel_test WITH ENCRYPTED PASSWORD 'satchel_test';
+ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT ALL ON TABLES TO satchel_test;
+ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT ALL ON SEQUENCES TO satchel_test;
+GRANT ALL PRIVILEGES ON DATABASE satchel_test TO satchel_test;
